@@ -1,0 +1,9 @@
+
+
+{
+   "name":"akalanka",
+   "email":"akalanka@gmail.com",
+   "password":"123456",
+   "field":"maths",
+   "pic":"none"
+}

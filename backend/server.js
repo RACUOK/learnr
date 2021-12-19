@@ -1,23 +1,31 @@
-const express = require('express')
-const morgan = require('morgan')
-const cors = require('cors')
-const dotenv = require('dotenv')
+const express = require('express');
+const dotenv = require('dotenv');
+const mongoose = require('mongoose');
+const path = require('path');
+const cors = require('cors');
+const morgan = require('morgan');
+const connectDB = require('./config/connection');
 
-const connectDB = require('./config/connection')
+const app = express();
 
-const app = express()
+app.use(cors());
+app.use(express.json());
 
-app.use(cors)
-app.use(express.json())
+const PORT = process.env.PORT || 8080;
 
-const PORT = process.env.PORT || 5000
+//log requests
+app.use(morgan('tiny'));
 
-// log requests
-app.use(morgan('tiny'))
+//db connection
+connectDB();
 
-// db connection
-connectDB()
+//load routes
+const memberRouter = require('./routes/member');
 
-app.listen(PORT, ()=> {
-    console.log(`Server is running on port: ${PORT}`);
+app.use('/members', memberRouter);
+
+
+
+app.listen(PORT, ()=>{
+    console.log(`Server is running on port:${PORT}`);
 })
