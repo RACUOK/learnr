@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs')
 
 const Schema = mongoose.Schema;
 
-const memberSchema = new Schema({
+const userSchema = new Schema({
     name:{
         type:String,
         required:true
@@ -32,9 +32,9 @@ const memberSchema = new Schema({
     timestamps:true
 });
 
-// encrypt member password
+// encrypt user password
 
-memberSchema.pre("save", async function (next) {
+userSchema.pre("save", async function (next) {
     if(!this.isModified('password')) {
         next();
     }
@@ -43,12 +43,11 @@ memberSchema.pre("save", async function (next) {
     this.password = await bcrypt.hash(this.password, salt)
 })
 
-// dcrypt password
-
-memberSchema.methods.matchPassword = async function (enteredPassword) {
+// decrypt password
+userSchema.methods.matchPassword = async function (enteredPassword) {
     return await bcrypt.compare(enteredPassword, this.password)
 }
 
-const Member = mongoose.model('Member',memberSchema);
+const User = mongoose.model('User',userSchema);
 
-module.exports = Member;
+module.exports = User;
