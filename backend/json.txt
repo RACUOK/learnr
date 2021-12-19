@@ -3,5 +3,6 @@
    "email":"test@gmail.com",
    "password":"123456",
    "field":["maths","science"]
-   "pic":"none"
+   "pic":"none",
+   "userRole":"editor"
 }
