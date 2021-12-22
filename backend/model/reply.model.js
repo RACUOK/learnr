@@ -10,6 +10,16 @@ const replySchema = mongoose.Schema({
     },
     url:{
         type:String
+    },
+    user:{
+        type: mongoose.Schema.Types.ObjectId,
+        required:true,
+        ref:"User"
+    },
+    questionId:{
+        type:mongoose.Schema.Types.ObjectId,
+        required:true,
+        ref:"Question"
     }
 },
 {

@@ -20,9 +20,11 @@ connectDB()
 //load routes
 const userRouter = require('./routes/users')
 const questionRouter = require('./routes/questions')
+const replyRouter = require('./routes/reply')
 
 app.use('/users', userRouter)
 app.use('/questions', questionRouter)
+app.use('/replies', replyRouter)
 
 app.listen(PORT, ()=>{
     console.log(`Server is running on port:${PORT}`)

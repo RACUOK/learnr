@@ -23,14 +23,14 @@ const getQuestionsById = asyncHandler(async (req, res) => {
 // create a question
 
 const createQuestion = asyncHandler(async (req, res) => {
-    const {category,  title,  description, image} = req.body
+    const {category,  title,  description, image, replies} = req.body
 
     if(!category || !title || !description) {
         res.status(400)
         throw new Error("Please fill all the fields")
     } else{
         const question = new Question({
-            user: req.user._id, category,  title,  description, image
+            user: req.user._id, category,  title,  description, image,  replies
         })
 
         const createdQuestion = await question.save()
@@ -43,7 +43,7 @@ const createQuestion = asyncHandler(async (req, res) => {
 
 const updateQuestion = asyncHandler(async (req, res) => {
 
-    const {category,  title,  description, image} = req.body
+    const {category,  title,  description, image,  replies} = req.body
 
     const question = await Question.findById(req.params.id)
 
@@ -57,6 +57,7 @@ const updateQuestion = asyncHandler(async (req, res) => {
         question.title = title
         question.description = description
         question.image = image
+        question. replies = replies
 
         const updatedQuestion = await question.save()
         res.json(updatedQuestion)
