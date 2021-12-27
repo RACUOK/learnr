@@ -2,16 +2,15 @@
    "name":"test",
    "email":"test@gmail.com",
    "password":"123456",
-   "field":["maths","science"]
-   "pic":"none",
-   "userRole":"editor"
+   "field":["maths","science"],
+   "pic":"none"
 }
 
 {
    "category":"maths",  
    "title":"numbers",  
    "description":"demo", 
-   "image":"noe"
+   "image":"none"
 }
 
 {
