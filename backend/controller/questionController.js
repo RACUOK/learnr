@@ -1,5 +1,6 @@
 const Question = require('../model/question.model')
 const asyncHandler = require('express-async-handler')
+const {roles} = require('../roles')
 
 // get all questions
 
@@ -23,6 +24,8 @@ const getQuestionsById = asyncHandler(async (req, res) => {
 // create a question
 
 const createQuestion = asyncHandler(async (req, res) => {
+
+
     const {category,  title,  description, image, replies} = req.body
 
     if(!category || !title || !description) {
@@ -47,24 +50,33 @@ const updateQuestion = asyncHandler(async (req, res) => {
 
     const question = await Question.findById(req.params.id)
 
-    if(question.user.toString() !== req.user._id.toString()) {
-        res.status(401)
-        throw new Error("You cannot perform this action")
-    } 
+    var permission = roles.can(req.user.userRole).updateAny("question")
 
-    if(question) {
-        question.category = category
-        question.title = title
-        question.description = description
-        question.image = image
-        question. replies = replies
-
-        const updatedQuestion = await question.save()
-        res.json(updatedQuestion)
-    } else {
-        res.status(404)
-        throw new Error("Question not found")
+    if (permission.granted === false) {
+        if(question.user.toString() === req.user._id.toString()) {
+            permission = roles.can(req.user.userRole).updateOwn("question")
+        } 
     }
+
+    if (permission.granted) {
+        if(question) {
+            question.category = category
+            question.title = title
+            question.description = description
+            question.image = image
+            question. replies = replies
+    
+            const updatedQuestion = await question.save()
+            res.json(updatedQuestion)
+        } else {
+            res.status(404)
+            throw new Error("Question not found")
+        }
+    } else{
+        res.status(403)
+        throw new Error("You don't have permission!")
+    }
+    
 })
 
 // delete a question

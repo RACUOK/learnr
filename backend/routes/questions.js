@@ -5,7 +5,7 @@ const {protect} = require('../middleware/authMiddleware')
 const {grantAccess} = require('../permission/permission')
 
 router.route('/').get(getQuestions)
-router.route('/create').post(protect, grantAccess('createOwn', 'question'), createQuestion)
+router.route('/create').post(protect, createQuestion)
 router.route('/:id').get(getQuestionsById).put(protect, updateQuestion).delete(protect, deleteQuestion)
 
 module.exports = router
