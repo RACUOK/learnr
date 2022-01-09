@@ -7,7 +7,7 @@ exports.roles = (function () {
     .createOwn("question")
     .updateOwn("question")
     .deleteOwn("question")
-    .createAny("reply")
+    .createOwn("reply")
     .updateOwn("reply")
     .deleteOwn("reply")
 
