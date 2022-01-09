@@ -84,18 +84,27 @@ const updateQuestion = asyncHandler(async (req, res) => {
 const deleteQuestion = asyncHandler(async (req,res) => {
     const question = await Question.findById(req.params.id)
 
-    if(question.user.toString() !== req.user._id.toString()) {
-        res.status(401)
-        throw new Error("You cannot perform this action")
-    } 
+    var permission = roles.can(req.user.userRole).deleteAny("question")
 
-    if(question) {
-        await question.remove()
-        res.json({message:"Question Removed"})
-    } else {
-        res.status(404)
-        throw new Error("Note not found")
+    if (permission.granted === false) {
+        if(question.user.toString() === req.user._id.toString()) {
+            permission = roles.can(req.user.userRole).deleteOwn("question")
+        } 
     }
+
+    if (permission.granted) {
+        if(question) {
+            await question.remove()
+            res.json({message:"Question Removed"})
+        } else {
+            res.status(404)
+            throw new Error("Note not found")
+        }
+    } else {
+        res.status(403)
+        throw new Error("You don't have permission!")
+    }
+    
 })
 
 module.exports = {getQuestions, createQuestion, getQuestionsById, updateQuestion, deleteQuestion}
