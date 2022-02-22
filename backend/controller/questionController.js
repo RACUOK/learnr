@@ -111,7 +111,7 @@ const deleteQuestion = asyncHandler(async (req,res) => {
 
 // search a question
 
-const seachQuestion = asyncHandler(async (req, res) => {
+const searchQuestion = asyncHandler(async (req, res) => {
     const keyword = req.query.search ? {
         $or: [
             { grade: { $regex: req.query.search, $options: "i"}},
@@ -124,4 +124,4 @@ const seachQuestion = asyncHandler(async (req, res) => {
     res.send(questions)
 })
 
-module.exports = {getQuestions, createQuestion, getQuestionsById, updateQuestion, deleteQuestion, seachQuestion}
+module.exports = {getQuestions, createQuestion, getQuestionsById, updateQuestion, deleteQuestion, searchQuestion}
