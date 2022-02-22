@@ -109,4 +109,19 @@ const deleteQuestion = asyncHandler(async (req,res) => {
     
 })
 
-module.exports = {getQuestions, createQuestion, getQuestionsById, updateQuestion, deleteQuestion}
+// search a question
+
+const seachQuestion = asyncHandler(async (req, res) => {
+    const keyword = req.query.search ? {
+        $or: [
+            { grade: { $regex: req.query.search, $options: "i"}},
+            { subject: { $regex: req.query.search, $options: "i"}},
+            { topic : { $regex: req.query.search, $options: "i"}}
+        ]
+    } : {}
+
+    const questions = await Question.find(keyword)
+    res.send(questions)
+})
+
+module.exports = {getQuestions, createQuestion, getQuestionsById, updateQuestion, deleteQuestion, seachQuestion}
