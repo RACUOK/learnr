@@ -2,21 +2,24 @@ const mongoose = require('mongoose')
 const Reply = require('./reply.model')
 
 const questionSchema = mongoose.Schema({
-    category:{
+    grade:{
         type:String,
         required:true
     },
-    title:{
+    subject:{
+        type:String,
+        required:true
+    },
+    topic:{
         type:String,
         required:true
     },
     description:{
         type:String,
-        required:true
+
     },
     image:{
         type:String,
-
     },
     replies:[{
         type:mongoose.Schema.Types.ObjectId,
