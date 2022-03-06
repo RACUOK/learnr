@@ -100,7 +100,7 @@ const deleteQuestion = asyncHandler(async (req,res) => {
             res.json({message:"Question Removed"})
         } else {
             res.status(404)
-            throw new Error("Question not found")
+            throw new Error("Note not found")
         }
     } else {
         res.status(403)
