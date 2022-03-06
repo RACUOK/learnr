@@ -9,7 +9,7 @@
 {
 "grade": 13, 
 "subject": "Combined Maths",  
-"topic": "Circle",   
+"topic": "Simple Harmonic Motion",   
 "description": "none", 
 "image":"none"
    
