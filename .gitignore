@@ -1,3 +1,47 @@
+#mobile
+mobile/node_modules
+mobile/npm-debug.log
+mobile/yarn-error.log
+
+# Xcode
+#
+mobile/build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+project.xcworkspace
+
+# Android/IntelliJ
+#
+mobile/build/
+.idea
+.gradle
+local.properties
+*.iml
+
+# BUCK
+mobile/buck-out/
+\.buckd/
+*.keystore
+!debug.keystore
+
+
+mobile/fastlane/report.xml
+mobile/fastlane/Preview.html
+mobile/fastlane/screenshots
+
 # Logs
 logs
 *.log
