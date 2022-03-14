@@ -17,7 +17,7 @@
 
 {
   "questionId":"",    
-  "text":"I dont know", 
+  "text":"I dont know the answer", 
   "image":"none", 
   "url":"google"
 }
