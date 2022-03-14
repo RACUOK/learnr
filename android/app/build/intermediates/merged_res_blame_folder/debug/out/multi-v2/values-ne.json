@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/kasun/Desktop/learnr/mobile/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ne/values-ne.xml",
+            "outputFile": "/home/kasun/Desktop/learnr/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ne/values-ne.xml",
             "map": [
                 {
                     "source": "/home/kasun/.gradle/caches/transforms-3/9f18c6b50baa776d71894ad120630276/transformed/core-1.6.0/res/values-ne/values-ne.xml",

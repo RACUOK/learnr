@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/kasun/Desktop/learnr/mobile/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v23/values-v23.xml",
+            "outputFile": "/home/kasun/Desktop/learnr/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v23/values-v23.xml",
             "map": [
                 {
                     "source": "/home/kasun/.gradle/caches/transforms-3/378f8d1f5d9e8f2dccf5622b520d15a5/transformed/cardview-1.0.0/res/values-v23/values-v23.xml",

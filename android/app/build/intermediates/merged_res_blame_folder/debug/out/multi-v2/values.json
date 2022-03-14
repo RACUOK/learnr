@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/kasun/Desktop/learnr/mobile/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/home/kasun/Desktop/learnr/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
                 {
                     "source": "/home/kasun/.gradle/caches/transforms-3/1e2170dbcf59f9d944fc1c022a41d609/transformed/jetified-autofill-1.1.0/res/values/values.xml",
@@ -40,6 +40,23 @@
                     }
                 },
                 {
+                    "source": "/home/kasun/Desktop/learnr/android/app/src/main/res/values/strings.xml",
+                    "from": {
+                        "startLines": "1",
+                        "startColumns": "4",
+                        "startOffsets": "16",
+                        "endColumns": "43",
+                        "endOffsets": "55"
+                    },
+                    "to": {
+                        "startLines": "687",
+                        "startColumns": "4",
+                        "startOffsets": "43937",
+                        "endColumns": "43",
+                        "endOffsets": "43976"
+                    }
+                },
+                {
                     "source": "/home/kasun/.gradle/caches/transforms-3/9b6cc75e89d4038448f147e4b5cd437c/transformed/coordinatorlayout-1.1.0/res/values/values.xml",
                     "from": {
                         "startLines": "2,3,6,16",
@@ -75,23 +92,6 @@
                         "endLines": "580,598,631,5975,5979",
                         "endColumns": "56,64,63,24,24",
                         "endOffsets": "37650,38520,40227,383641,383790"
-                    }
-                },
-                {
-                    "source": "/home/kasun/Desktop/learnr/mobile/android/app/src/main/res/values/strings.xml",
-                    "from": {
-                        "startLines": "1",
-                        "startColumns": "4",
-                        "startOffsets": "16",
-                        "endColumns": "43",
-                        "endOffsets": "55"
-                    },
-                    "to": {
-                        "startLines": "687",
-                        "startColumns": "4",
-                        "startOffsets": "43937",
-                        "endColumns": "43",
-                        "endOffsets": "43976"
                     }
                 },
                 {
@@ -241,22 +241,20 @@
                     }
                 },
                 {
-                    "source": "/home/kasun/Desktop/learnr/mobile/android/app/src/main/res/values/styles.xml",
+                    "source": "/home/kasun/Desktop/learnr/android/app/build/generated/res/resValues/debug/values/gradleResValues.xml",
                     "from": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "54",
-                        "endLines": "6",
-                        "endColumns": "12",
-                        "endOffsets": "267"
+                        "startLines": "6,8",
+                        "startColumns": "4,4",
+                        "startOffsets": "156,262",
+                        "endColumns": "63,68",
+                        "endOffsets": "215,326"
                     },
                     "to": {
-                        "startLines": "817",
-                        "startColumns": "4",
-                        "startOffsets": "59458",
-                        "endLines": "820",
-                        "endColumns": "12",
-                        "endOffsets": "59671"
+                        "startLines": "651,652",
+                        "startColumns": "4,4",
+                        "startOffsets": "41418,41482",
+                        "endColumns": "63,68",
+                        "endOffsets": "41477,41546"
                     }
                 },
                 {
@@ -317,23 +315,6 @@
                     }
                 },
                 {
-                    "source": "/home/kasun/Desktop/learnr/mobile/android/app/build/generated/res/resValues/debug/values/gradleResValues.xml",
-                    "from": {
-                        "startLines": "6,8",
-                        "startColumns": "4,4",
-                        "startOffsets": "156,262",
-                        "endColumns": "63,68",
-                        "endOffsets": "215,326"
-                    },
-                    "to": {
-                        "startLines": "651,652",
-                        "startColumns": "4,4",
-                        "startOffsets": "41418,41482",
-                        "endColumns": "63,68",
-                        "endOffsets": "41477,41546"
-                    }
-                },
-                {
                     "source": "/home/kasun/.gradle/caches/transforms-3/7405f0ccd256d79609480792c9e36ea6/transformed/transition-1.2.0/res/values/values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11",
@@ -367,6 +348,25 @@
                         "endLines": "4588,4595,4606,6885,6890",
                         "endColumns": "24,24,24,24,24",
                         "endOffsets": "306789,307174,307771,428548,428818"
+                    }
+                },
+                {
+                    "source": "/home/kasun/Desktop/learnr/android/app/src/main/res/values/styles.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "54",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "267"
+                    },
+                    "to": {
+                        "startLines": "817",
+                        "startColumns": "4",
+                        "startOffsets": "59458",
+                        "endLines": "820",
+                        "endColumns": "12",
+                        "endOffsets": "59671"
                     }
                 }
             ]
