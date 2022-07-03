@@ -21,12 +21,21 @@ const getQuestionsById = asyncHandler(async (req, res) => {
     }
 })
 
+// get logged in user questions
+
+const getQuestionByUser = asyncHandler(async (req, res) => {
+    const questions = await Question.find({user: req.user._id})
+    res.json(questions)
+})
+
 // create a question
 
 const createQuestion = asyncHandler(async (req, res) => {
 
 
     const {grade, subject, topic, description, image, replies} = req.body
+    console.log(req.body)
+    console.log(req.user)
 
     if(!grade || !subject || !description) {
         res.status(400)
@@ -124,4 +133,4 @@ const searchQuestion = asyncHandler(async (req, res) => {
     res.send(questions)
 })
 
-module.exports = {getQuestions, createQuestion, getQuestionsById, updateQuestion, deleteQuestion, searchQuestion}
+module.exports = {getQuestions, createQuestion, getQuestionsById, updateQuestion, deleteQuestion, searchQuestion, getQuestionByUser}
